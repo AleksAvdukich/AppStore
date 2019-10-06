@@ -17,6 +17,7 @@
 		1F605CF42346A3C500D4105D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F605CF32346A3C500D4105D /* UIView+Layout.swift */; };
 		1F605CF62346AA3B00D4105D /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F605CF52346AA3B00D4105D /* VerticalStackView.swift */; };
 		1F605CF92347E75900D4105D /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F605CF82347E75900D4105D /* SearchResult.swift */; };
+		1F8E8C19234A14AE004355E3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8E8C18234A14AE004355E3 /* Service.swift */; };
 		1FC1A7C2234547AF008F74BA /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC1A7C1234547AF008F74BA /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		1F605CF32346A3C500D4105D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		1F605CF52346AA3B00D4105D /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		1F605CF82347E75900D4105D /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		1F8E8C18234A14AE004355E3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1FC1A7C1234547AF008F74BA /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 		1F4799E42345443100B429DF /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				1F8E8C17234A148F004355E3 /* Service */,
 				1F605CF72347E73500D4105D /* Model */,
 				1F605CF22346A38C00D4105D /* Helpers */,
 				1F605CEF234640C100D4105D /* Views */,
@@ -103,6 +106,14 @@
 				1F605CF82347E75900D4105D /* SearchResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1F8E8C17234A148F004355E3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1F8E8C18234A14AE004355E3 /* Service.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		1FC1A7C3234624F0008F74BA /* Controller */ = {
@@ -190,6 +201,7 @@
 				1F605CF92347E75900D4105D /* SearchResult.swift in Sources */,
 				1FC1A7C2234547AF008F74BA /* BaseTabBarController.swift in Sources */,
 				1F605CEE2346254900D4105D /* AppsSearchController.swift in Sources */,
+				1F8E8C19234A14AE004355E3 /* Service.swift in Sources */,
 				1F605CF42346A3C500D4105D /* UIView+Layout.swift in Sources */,
 				1F605CF12346410500D4105D /* SearchResultCell.swift in Sources */,
 				1F605CF62346AA3B00D4105D /* VerticalStackView.swift in Sources */,
