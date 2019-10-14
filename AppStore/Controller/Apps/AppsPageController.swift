@@ -70,7 +70,7 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         }
         
         dispatchGroup.enter()
-        Service.shared.fetchSocialApp { (apps, err) in
+        Service.shared.fetchSocialApps { (apps, err) in
             dispatchGroup.leave()
             self.socialApps = apps ?? []
 //            self.collectionView.reloadData()
