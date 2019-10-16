@@ -74,7 +74,7 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         Service.shared.fetchSocialApps { (apps, err) in
             dispatchGroup.leave()
             self.socialApps = apps ?? []
-//            self.collectionView.reloadData()
+            //            self.collectionView.reloadData()
         }
         
         //completion
@@ -124,8 +124,10 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         cell.horizontalController.didSelectHandler = { [weak self] feedResult in
             
             let controller = AppDetailController()
-            controller.navigationItem.title = feedResult.name
+            controller.appId = feedResult.id
             
+            
+            controller.navigationItem.title = feedResult.name
             self?.navigationController?.pushViewController(controller, animated: true)
         }
         
