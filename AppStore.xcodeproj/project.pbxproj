@@ -18,6 +18,7 @@
 		1F3D80E52358BA00009995B6 /* ReviewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3D80E42358BA00009995B6 /* ReviewRowCell.swift */; };
 		1F3D80E72358C107009995B6 /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3D80E62358C107009995B6 /* ReviewsController.swift */; };
 		1F3D80E92358C450009995B6 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3D80E82358C450009995B6 /* ReviewCell.swift */; };
+		1F3D80EB2359FC39009995B6 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3D80EA2359FC39009995B6 /* Reviews.swift */; };
 		1F4799E62345443100B429DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4799E52345443100B429DF /* AppDelegate.swift */; };
 		1F4799E82345443100B429DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4799E72345443100B429DF /* ViewController.swift */; };
 		1F4799EB2345443100B429DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4799E92345443100B429DF /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		1F3D80E42358BA00009995B6 /* ReviewRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRowCell.swift; sourceTree = "<group>"; };
 		1F3D80E62358C107009995B6 /* ReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
 		1F3D80E82358C450009995B6 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		1F3D80EA2359FC39009995B6 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		1F4799E22345443100B429DF /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4799E52345443100B429DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F4799E72345443100B429DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				1F605CF82347E75900D4105D /* SearchResult.swift */,
 				1FC87057234F8D8D006CE597 /* AppGroup.swift */,
 				1F4D79622353C6E400FB0E0A /* SocialApp.swift */,
+				1F3D80EA2359FC39009995B6 /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				1F8E8C19234A14AE004355E3 /* Service.swift in Sources */,
 				1F3D80E12357CC0A009995B6 /* PreviewCell.swift in Sources */,
 				1F3D80E72358C107009995B6 /* ReviewsController.swift in Sources */,
+				1F3D80EB2359FC39009995B6 /* Reviews.swift in Sources */,
 				1FC87050234BDCC9006CE597 /* Extensions.swift in Sources */,
 				1F605CF42346A3C500D4105D /* UIView+Layout.swift in Sources */,
 				1F605CF12346410500D4105D /* SearchResultCell.swift in Sources */,
