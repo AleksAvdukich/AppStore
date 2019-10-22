@@ -38,6 +38,7 @@
 		1F6947C9235E385700F9C3AF /* AppFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6947C8235E385700F9C3AF /* AppFullscreenController.swift */; };
 		1F6947CB235E3D4600F9C3AF /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6947CA235E3D4600F9C3AF /* AppFullscreenDescriptionCell.swift */; };
 		1F6947CD235E62B900F9C3AF /* AppFullscreenHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6947CC235E62B900F9C3AF /* AppFullscreenHeaderCell.swift */; };
+		1F6947CF235F495900F9C3AF /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6947CE235F495900F9C3AF /* TodayItem.swift */; };
 		1F8E8C19234A14AE004355E3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8E8C18234A14AE004355E3 /* Service.swift */; };
 		1FC1A7C2234547AF008F74BA /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC1A7C1234547AF008F74BA /* BaseTabBarController.swift */; };
 		1FC87050234BDCC9006CE597 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC8704F234BDCC9006CE597 /* Extensions.swift */; };
@@ -82,6 +83,7 @@
 		1F6947C8235E385700F9C3AF /* AppFullscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenController.swift; sourceTree = "<group>"; };
 		1F6947CA235E3D4600F9C3AF /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
 		1F6947CC235E62B900F9C3AF /* AppFullscreenHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenHeaderCell.swift; sourceTree = "<group>"; };
+		1F6947CE235F495900F9C3AF /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		1F8E8C18234A14AE004355E3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		1FC1A7C1234547AF008F74BA /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		1FC8704F234BDCC9006CE597 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				1FC87057234F8D8D006CE597 /* AppGroup.swift */,
 				1F4D79622353C6E400FB0E0A /* SocialApp.swift */,
 				1F3D80EA2359FC39009995B6 /* Reviews.swift */,
+				1F6947CE235F495900F9C3AF /* TodayItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				1F307A0F234BDAA100DFF118 /* AppRowCell.swift in Sources */,
 				1F3D80E32357D077009995B6 /* PreviewScreenshotsController.swift in Sources */,
 				1F605CEE2346254900D4105D /* AppsSearchController.swift in Sources */,
+				1F6947CF235F495900F9C3AF /* TodayItem.swift in Sources */,
 				1F307A0B234B9FE200DFF118 /* AppsGroupCell.swift in Sources */,
 				1F6947CB235E3D4600F9C3AF /* AppFullscreenDescriptionCell.swift in Sources */,
 				1FC87052234CBFE3006CE597 /* AppsPageHeader.swift in Sources */,
