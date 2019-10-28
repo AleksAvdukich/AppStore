@@ -10,25 +10,33 @@ import UIKit
 
 class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
-//    fileprivate let cellId = "cellId"
-//    fileprivate let multipleAppCellId = "multipleAppCellId"
+    //    fileprivate let cellId = "cellId"
+    //    fileprivate let multipleAppCellId = "multipleAppCellId"
     
-    let items = [
-        TodayItem.init(category: "LIFE HACK", title: "Utilizing your time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps your need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single),
-        
-        TodayItem.init(category: "SECOND CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple),
-        
-        TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9725490196, green: 0.9567427039, blue: 0.6927108169, alpha: 1), cellType: .single),
-        
-        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple)
-    ]
+    //    let items = [
+    //
+    //        TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9725490196, green: 0.9567427039, blue: 0.6927108169, alpha: 1), cellType: .single),
+    //
+    //        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple)
+    //    ]
+    
+    var items = [TodayItem]()
+    
+    var activityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: .whiteLarge)
+        aiv.color = .darkGray
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-//            layout.scrollDirection = .horizontal
-//        }
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centerInSuperview()
+        
+        fetchData()
         
         navigationController?.isNavigationBarHidden = true
         
@@ -36,6 +44,40 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayItem.CellType.single.rawValue)
         collectionView.register(TodayMultipleAppCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
+    }
+    
+    fileprivate func fetchData() {
+        
+        let dispatchGroup = DispatchGroup()
+        
+        var topGrossingGroup: AppGroup?
+        var gamesGroup: AppGroup?
+        
+        dispatchGroup.enter()
+        Service.shared.fetchTopGrossing { (appGroup, err) in
+            topGrossingGroup = appGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.enter()
+        Service.shared.fetchGames { (appGroup, err) in
+            gamesGroup = appGroup
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            print("Finished fetching")
+            self.activityIndicatorView.stopAnimating()
+            
+            self.items = [
+                TodayItem.init(category: "Daily List", title: topGrossingGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: topGrossingGroup?.feed.results ?? []),
+                TodayItem.init(category: "Daily List", title: gamesGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: gamesGroup?.feed.results ?? []),
+                TodayItem.init(category: "LIFE HACK", title: "Utilizing your time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps your need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single, apps: []),
+            ]
+            
+            self.collectionView.reloadData()
+        }
+        
     }
     
     var appFullscreenController: AppFullscreenController!
@@ -66,7 +108,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         guard let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
         
         self.startingFrame = startingFrame
-//        redView.frame = startingFrame
+        //        redView.frame = startingFrame
         fullScreenView.translatesAutoresizingMaskIntoConstraints = false
         topConstraint = fullScreenView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
         leadingConstraint = fullScreenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
@@ -79,18 +121,18 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         fullScreenView.layer.cornerRadius = 16
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
-
+            
             self.topConstraint?.constant = 0
             self.leadingConstraint?.constant = 0
             self.widthConstraint?.constant = self.view.frame.width
             self.heightConstraint?.constant = self.view.frame.height
             
             self.view.layoutIfNeeded() //starts animation
-
+            
             self.tabBarController?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
             
             guard let cell = self.appFullscreenController.tableView.cellForRow(at: [0, 0]) as? AppFullscreenHeaderCell else { return }
-
+            
             cell.todayCell.topConstraint.constant = 48
             cell.layoutIfNeeded()
             
@@ -100,13 +142,13 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     var startingFrame: CGRect?
     
     @objc func handleRemoveRedView() {
-//        gesture.view?.removeFromSuperview()
+        //        gesture.view?.removeFromSuperview()
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             
             self.appFullscreenController.tableView.contentOffset = .zero
             
-//            gesture.view?.frame = self.startingFrame ?? .zero
-
+            //            gesture.view?.frame = self.startingFrame ?? .zero
+            
             guard let startingFrame = self.startingFrame else { return }
             
             self.topConstraint?.constant = startingFrame.origin.y
@@ -142,15 +184,15 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         cell.todayItem = items[indexPath.item]
         
         return cell
-//        if indexPath.item == 0 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleAppCellId, for: indexPath) as! TodayMultipleAppCell
-//            cell.todayItem = items[indexPath.item]
-//            return cell
-//        }
-//
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
-//        cell.todayItem = items[indexPath.item]
-//        return cell
+        //        if indexPath.item == 0 {
+        //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: multipleAppCellId, for: indexPath) as! TodayMultipleAppCell
+        //            cell.todayItem = items[indexPath.item]
+        //            return cell
+        //        }
+        //
+        //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! TodayCell
+        //        cell.todayItem = items[indexPath.item]
+        //        return cell
     }
     
     static let cellSize: CGFloat = 500
