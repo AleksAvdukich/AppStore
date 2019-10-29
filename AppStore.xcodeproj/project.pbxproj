@@ -39,6 +39,7 @@
 		1F68D8F42360FC89002E37D2 /* BaseTodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8F32360FC89002E37D2 /* BaseTodayCell.swift */; };
 		1F68D8F62362084B002E37D2 /* TodayMultipleAppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8F52362084B002E37D2 /* TodayMultipleAppsController.swift */; };
 		1F68D8F8236209A7002E37D2 /* MultipleAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8F7236209A7002E37D2 /* MultipleAppCell.swift */; };
+		1F68D8FA2368AD00002E37D2 /* BackEnabledNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68D8F92368AD00002E37D2 /* BackEnabledNavigationController.swift */; };
 		1F6947C9235E385700F9C3AF /* AppFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6947C8235E385700F9C3AF /* AppFullscreenController.swift */; };
 		1F6947CB235E3D4600F9C3AF /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6947CA235E3D4600F9C3AF /* AppFullscreenDescriptionCell.swift */; };
 		1F6947CD235E62B900F9C3AF /* AppFullscreenHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6947CC235E62B900F9C3AF /* AppFullscreenHeaderCell.swift */; };
@@ -88,6 +89,7 @@
 		1F68D8F32360FC89002E37D2 /* BaseTodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTodayCell.swift; sourceTree = "<group>"; };
 		1F68D8F52362084B002E37D2 /* TodayMultipleAppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMultipleAppsController.swift; sourceTree = "<group>"; };
 		1F68D8F7236209A7002E37D2 /* MultipleAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAppCell.swift; sourceTree = "<group>"; };
+		1F68D8F92368AD00002E37D2 /* BackEnabledNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackEnabledNavigationController.swift; sourceTree = "<group>"; };
 		1F6947C8235E385700F9C3AF /* AppFullscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenController.swift; sourceTree = "<group>"; };
 		1F6947CA235E3D4600F9C3AF /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
 		1F6947CC235E62B900F9C3AF /* AppFullscreenHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenHeaderCell.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				1F255B2C235CFC1E00F9FF47 /* TodayController.swift */,
 				1F6947C8235E385700F9C3AF /* AppFullscreenController.swift */,
 				1F68D8F52362084B002E37D2 /* TodayMultipleAppsController.swift */,
+				1F68D8F92368AD00002E37D2 /* BackEnabledNavigationController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				1F8E8C19234A14AE004355E3 /* Service.swift in Sources */,
 				1F3D80E12357CC0A009995B6 /* PreviewCell.swift in Sources */,
 				1F3D80E72358C107009995B6 /* ReviewsController.swift in Sources */,
+				1F68D8FA2368AD00002E37D2 /* BackEnabledNavigationController.swift in Sources */,
 				1F3D80EB2359FC39009995B6 /* Reviews.swift in Sources */,
 				1F255B2D235CFC1E00F9FF47 /* TodayController.swift in Sources */,
 				1FC87050234BDCC9006CE597 /* Extensions.swift in Sources */,
