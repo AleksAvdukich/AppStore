@@ -10,16 +10,6 @@ import UIKit
 
 class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
-    //    fileprivate let cellId = "cellId"
-    //    fileprivate let multipleAppCellId = "multipleAppCellId"
-    
-    //    let items = [
-    //
-    //        TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9725490196, green: 0.9567427039, blue: 0.6927108169, alpha: 1), cellType: .single),
-    //
-    //        TodayItem.init(category: "MULTIPLE CELL", title: "Test-Drive These CarPlay Apps", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple)
-    //    ]
-    
     var items = [TodayItem]()
     
     var activityIndicatorView: UIActivityIndicatorView = {
@@ -80,6 +70,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
                 TodayItem.init(category: "Daily List", title: topGrossingGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: topGrossingGroup?.feed.results ?? []),
                 TodayItem.init(category: "Daily List", title: gamesGroup?.feed.title ?? "", image: #imageLiteral(resourceName: "garden"), description: "", backgroundColor: .white, cellType: .multiple, apps: gamesGroup?.feed.results ?? []),
                 TodayItem.init(category: "LIFE HACK", title: "Utilizing your time", image: #imageLiteral(resourceName: "garden"), description: "All the tools and apps your need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single, apps: []),
+                TodayItem.init(category: "HOLIDAYS", title: "Travel on a Budget", image: #imageLiteral(resourceName: "holiday"), description: "Find out all you need to know on how to travel without packing everything!", backgroundColor: #colorLiteral(red: 0.9838578105, green: 0.9588007331, blue: 0.7274674177, alpha: 1), cellType: .single, apps: []),
             ]
             
             self.collectionView.reloadData()
@@ -216,7 +207,8 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
                 
                 let fullController = TodayMultipleAppsController(mode: .fullscreen)
                 fullController.apps = apps
-                present(fullController, animated: true)
+                present(BackEnabledNavigationController(rootViewController: fullController), animated: true)
+                return
             }
             
             superview = superview?.superview
