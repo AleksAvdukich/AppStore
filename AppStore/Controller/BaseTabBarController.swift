@@ -13,10 +13,8 @@ class BaseTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        tabBar.tintColor = .yellow //цвет иконки
-        //        tabBar.barTintColor = .green //цвет бара
-        
         viewControllers = [
+            createNavController(viewController: MusicController(), title: "Music", imageName: "music"),
             createNavController(viewController: TodayController(), title: "Today", imageName: "today_icon"),
             createNavController(viewController: AppsPageController(), title: "Apps", imageName: "apps"),
             createNavController(viewController: AppsSearchController(), title: "Search", imageName: "search"),
